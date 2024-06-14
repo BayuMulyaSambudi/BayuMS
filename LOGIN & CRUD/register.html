@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleb.css" media="screen" title="no title">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <title>Register Page</title>
+    <style>
+        .toggle-password {
+            padding-left: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="input">
+        <h1>REGISTER</h1>
+        <form action="register.php" method="POST">
+            <div class="box-input">
+                <i class="fas fa-user"></i>
+                <input type="text" name="fullname" placeholder="Masukkan Nama Lengkap" required />
+            </div>
+            <div class="box-input">
+                <i class="fas fa-address-book"></i>
+                <input type="text" name="username" placeholder="Masukkan Username" required />
+            </div>
+            <div class="box-input">
+                <i class="fas fa-envelope-open"></i>
+                <input type="text" name="email" placeholder="Masukkan Email" required />
+            </div>
+            <div class="box-input">
+                <i class="fas fa-lock"></i>
+                <input style="padding-left: 25px;" type="password" name="password" id="password" placeholder="Masukkan Password" required />
+                <span class="toggle-password" onclick="togglePasswordVisibility()">
+                  <i class="fas fa-eye" id="toggleIcon"></i>
+              </span>
+            </div>
+            <a href="index.html">
+                <button type="submit" name="register" class="btn-input">
+                    Register
+                </button>
+            </a>
+            <div class="bottom">
+                <p>Sudah punya akun?
+                    <a href="index.html">Login disini</a>
+                </p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("password");
+            var toggleIcon = document.getElementById("toggleIcon");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleIcon.classList.remove("fa-eye");
+                toggleIcon.classList.add("fa-eye-slash");
+            } else {
+                passwordInput.type = "password";
+                toggleIcon.classList.remove("fa-eye-slash");
+                toggleIcon.classList.add("fa-eye");
+            }
+        }
+    </script>
+</body>
+
+</html>
